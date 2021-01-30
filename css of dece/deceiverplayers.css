@@ -1,0 +1,772 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Everything above is a CSS Reset */
+
+.topofpage {
+    margin: 10px auto;
+}
+
+.topofpage  {
+    text-align: center;
+    font-family: 'Bungee', cursive;
+    font-size: 42px;
+    color: rgb(129, 190, 129);
+    text-shadow: /* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  0px 0px #000,
+     1px  0px 0px #000,
+    -1px  1px 0px #000,
+     0px  1px 0px #000,
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px #000,
+     0px -2px 0px #000,
+     1px -2px 0px #000,
+     2px -2px 0px #000,
+     2px -1px 0px #000,
+     2px  0px 0px #000,
+     2px  1px 0px #000,
+     2px  2px 0px #000,
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 0px #000,
+    -2px  2px 0px #000,
+    -2px  1px 0px #000,
+    -2px  0px 0px #000,
+    -2px -1px 0px #000;
+}
+
+/* The Fancy Heading Code */
+
+.container {
+    position: absolute;
+    transform: translate(-50%, -130%);
+    top: 40%;
+    left: 50%;
+  }
+  
+  .glitch {
+    color: rgb(58, 197, 81);
+    position: relative;
+    font-size: 53px;
+    // margin: 70px 200px;
+    animation: glitch 5s 5s infinite;
+  }
+  
+  .glitch::before {
+    content: attr(data-text);
+    position: absolute;
+    left: -2px;
+    text-shadow: -5px 0 rgb(24, 63, 168);
+    background: rgb(23, 58, 0);
+    overflow: hidden;
+    top: 0;
+    animation: noise-1 4s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
+  }
+  
+  .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    left: 2px;
+    text-shadow: -5px 0 rgb(70, 18, 16);
+    background: linear-gradient(to right top, rgb(0, 58, 8), grey);
+    overflow: hidden;
+    top: 0;
+    animation: noise-2 2s linear infinite alternate-reverse, glitch 5s 3s infinite;
+  }
+  
+  @keyframes glitch {
+    1%{
+      transform: rotateX(10deg) skewX(90deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+  
+  @keyframes noise-1 {
+    $steps: 30;
+    @for $i from 1 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  @keyframes noise-2 {
+    $steps: 30;
+    @for $i from 0 through $steps {
+      #{percentage($i*(1/$steps))} {
+        $top: random(100);
+        $bottom: random(101 - $top);
+        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
+      }
+    }
+  }
+  
+  .scanlines {
+    overflow: hidden;
+    mix-blend-mode: difference;
+  }
+  
+  .scanlines::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(255, 255, 255, 0.05) .5%,
+      transparent 1%
+    );
+  
+    animation: fudge 5s ease-in-out alternate infinite;
+  }
+  
+  
+  @keyframes fudge {
+    from {
+      transform: translate(0px, 0px);
+    }
+    to {
+      transform: translate(0px, 2%);
+    }
+  }
+  
+  .glow {
+    @extend .glitch;
+    text-shadow: 0 0 1000px rgb(94, 9, 9);
+    color: transparent;
+    position: absolute;
+    top: 0;
+  }
+  
+  .subtitle {
+    font-family:'Aldrich', sans-serif, 'Bungee', cursive;
+    font-weight: 100;
+    font-size: 30px;
+    color: rgba(31, 15, 25, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 20px;
+    text-align: center;
+    position: absolute;
+    left: 17%;
+    animation: glitch-2 3s 5.02s infinite;
+  }
+  
+  @keyframes glitch-2 {
+    1%{
+      transform: rotateX(10deg) skewX(70deg);
+    }
+    2%{
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+
+  /* Heading Ends Here */
+
+  body {
+      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat -20px 270px, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 875px 768px no-repeat, url('../deceiverspics/dkback-removebg-preview.png') -20px 1120px no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 860px 1560px no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') -20px 1950px no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
+  }
+  
+  .center-screen {
+    margin: 0 auto;
+    background: linear-gradient(to right bottom,rgb(250, 3, 3), rgb(190, 149, 134));
+    width: 50%;
+    height: 190px;
+    text-align: center;
+    padding-top: 150px;
+    font-family: 'Cutive Mono', monospace;
+    border: 3px solid rgba(11, 48, 11, 0.507);
+    letter-spacing: 5px;
+    font-weight: 900;
+    text-shadow: 2px 2px 2px rgb(110, 110, 110);
+    color: rgb(177, 177, 177);
+}
+
+.musicbox {
+    width: 50px;
+    height: 50px;
+    margin: 
+    padding: 10px 10px 0 0;
+    float: right;
+    overflow: hidden;
+}
+
+.musicbox p {
+    color: rgb(250, 0, 0);
+    text-indent: 0px;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 800;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    padding-bottom: 5px;
+    text-shadow: 2px 2px 2px rgb(231, 231, 231);
+    width: 200px;
+
+}
+
+.maincontent {
+    width: 70%;
+    background: linear-gradient(to right bottom, grey, rgb(66, 66, 66)));
+    margin: 15px auto;
+    border: grey;
+    box-shadow: 0 4px 8px 0 rgb(4, 156, 42), 0 6px 20px 0 rgb(156, 156, 156);
+    padding: 20px;
+    height: 3000px;
+}
+
+.moleaustra {
+    display: inline-block;
+    position: absolute;
+    left: 500px;
+}
+
+.maincontent h1 {
+    text-align: center;
+    font-family: 'Overpass Mono', monospace;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 34px;
+    text-indent: 10px;
+    color:rgb(255, 255, 255);
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid orange; /* The typwriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+        letter-spacing: .15em; /* Adjust as needed */
+        animation: 
+          typing 3.5s steps(40, end),
+          blink-caret .75s step-end infinite;
+      }
+      
+      /* The typing effect */
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: orange; }
+      }
+
+    text-shadow:/* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  0px 0px #000,
+     1px  0px 0px #000,
+    -1px  1px 0px #000,
+     0px  1px 0px #000,
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px #000,
+     0px -2px 0px #000,
+     1px -2px 0px #000,
+     2px -2px 0px #000,
+     2px -1px 0px #000,
+     2px  0px 0px #000,
+     2px  1px 0px #000,
+     2px  2px 0px #000,
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 0px #000,
+    -2px  2px 0px #000,
+    -2px  1px 0px #000,
+    -2px  0px 0px #000,
+    -2px -1px 0px #000;
+}
+
+.maincontent p {
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-indent: 10px;
+    color: white;
+    text-shadow: /* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  0px 0px #000,
+     1px  0px 0px #000,
+    -1px  1px 0px #000,
+     0px  1px 0px #000,
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px #000,
+     0px -2px 0px #000,
+     1px -2px 0px #000,
+     2px -2px 0px #000,
+     2px -1px 0px #000,
+     2px  0px 0px #000,
+     2px  1px 0px #000,
+     2px  2px 0px #000,
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 0px #000,
+    -2px  2px 0px #000,
+    -2px  1px 0px #000,
+    -2px  0px 0px #000,
+    -2px -1px 0px #000;
+}
+
+.paragraph1 img {
+    height: 340px;
+    width: 650px;
+    margin: 0 auto 10px auto;
+    padding-bottom: 30px;
+}
+
+.paragraph1 p {
+
+}
+
+
+.thumbnail2 {
+    max-width: 100%;
+    margin: auto;
+    text-align: center;
+    padding-top: 30px;
+    margin-bottom: 20px;
+  }
+  
+  .thumbnail2 img {
+    height: 103px;
+    width: 103px;
+    border-radius: 50%;
+    border: 2.5px double rgb(99, 99, 99);
+    display: inline-block;
+    margin-right: 9px;
+    margin-top: 5px;
+  }
+
+  .fling-minislide {width:350px; height:300px; overflow:hidden; position:relative; }
+  .fling-minislide img{ position:absolute; animation:fling-minislide 45s infinite; opacity:0; width: 100%; height: auto;}
+  
+  @keyframes fling-minislide {25%{opacity:1;} 40%{opacity:0;}}
+  .fling-minislide img:nth-child(8){animation-delay:0s;}
+  .fling-minislide img:nth-child(7){animation-delay:5s;}
+  .fling-minislide img:nth-child(6){animation-delay:10s;}
+  .fling-minislide img:nth-child(5){animation-delay:15s;}
+  .fling-minislide img:nth-child(4){animation-delay:20s;}
+  .fling-minislide img:nth-child(3){animation-delay:25s;}
+  .fling-minislide img:nth-child(2){animation-delay:30s;}
+  .fling-minislide img:nth-child(1){animation-delay:33s;}
+
+img[src="deceiverspics\castlesiege2.png"] {
+    height: 500px;
+}
+
+img[src="darkpitoutlook.jpg"] {
+  height: 500px;
+}
+
+.fling-minislide img {
+    width: 500px;
+    height: 270px;
+    margin: 0 auto;
+}
+
+.fling-minislide {
+    margin: 30px auto 10px auto;
+    width: 500px
+}
+
+.thumbnail2 h1 {
+    text-align: center;
+    color:rgb(129, 190, 129);
+    padding-bottom: 30px;
+    font-size: 48px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: /* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px rgb(255, 0, 0),
+    -1px  0px 0px #000,
+     1px  0px 0px rgb(177, 1, 1),
+    -1px  1px 0px #000,
+     0px  1px 0px rgb(173, 0, 0),
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px rgb(172, 2, 2),
+     0px -2px 0px #000,
+     1px -2px 0px rgb(156, 5, 5),
+     2px -2px 0px #000,
+     2px -1px 0px rgb(170, 6, 6),
+     2px  0px 0px #000,
+     2px  1px 0px #000,
+     2px  2px 2px rgb(190, 14, 14),
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 2px rgb(139, 14, 14),
+    -2px  2px 0px #000,
+    -2px  1px 0px rgb(114, 15, 15),
+    -2px  0px 0px #000,
+    -2px -1px 3px rgb(255, 2, 2);
+    
+}
+
+/*Buttons at the Bottom of the Page*/
+
+.buttonstyle {
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid black;
+    background-color: rgb(0, 105, 0);
+    margin-right: 16px;
+    border-radius: 2px;
+}
+
+.buttonstyle:hover {
+    background-color: rgb(175, 2, 2);
+}
+
+.buttons a {
+    color: black;
+    text-decoration: none;
+}
+
+.linkbutton {
+    font-size: 28px;
+    margin-bottom: 60px;
+}
+
+.buttons a:hover {
+    color: rgb(245, 116, 116);
+}
+
+.buttons a:visited {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 70px;
+
+}
+
+.secondmusictext {
+    font-size: 22px;
+}
+
+
+footer {
+    width: 70%;
+    height: 100px;
+    margin-top: 70px;
+    background: linear-gradient(green, rgb(5, 179, 28));
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+footer p:first-child {
+    color: white;
+}
+
+/* New Content Below */
+
+.headingnew {
+    padding: 15px;
+}
+
+.headingbox h1 {
+        text-align: center;
+        font-family: 'Overpass Mono', monospace;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 10px;
+        font-size: 34px;
+        text-indent: 10px;
+        color:rgb(255, 255, 255);
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid rgb(224, 4, 4); /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+              typing 3.5s steps(40, end),
+              blink-caret .75s step-end infinite;
+          }
+          
+          /* The typing effect */
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 30% }
+          }
+          
+          /* The typewriter cursor effect */
+          @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: rgb(243, 14, 14); }
+          }
+    
+}
+
+
+.headingbox {
+    padding: 40px 5px;
+}
+
+.halfcolumn {
+    width: 46%;
+    float: left;
+}
+
+.leftcolumn img {
+    display: inline-block;
+    width: 410px;
+    height: 420px;
+    padding: 10px;
+    margin-top: 50px;
+    padding-top: 40px;
+    float: left;
+}
+
+.leftcolumn {
+    w
+}
+
+.rightcolumn p {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 24px;
+    letter-spacing: 1px;
+    font-size: 17px;   
+}
+
+.chartext {
+    padding: 2px;
+}
+
+.chartext p {
+    text-align: center;
+    margin-left: 20px;
+}
+
+.rightcolumn h2 {
+    font-family: 'Lalezar', cursive;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 800;
+    font-size: 40px;
+    margin-bottom: -19px;
+    margin-left: 15px;
+
+
+
+    text-shadow:/* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  0px 0px #000,
+     1px  0px 0px #000,
+    -1px  1px 0px #000,
+     0px  1px 0px #000,
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px #000,
+     0px -2px 0px #000,
+     1px -2px 0px #000,
+     2px -2px 0px #000,
+     2px -1px 0px #000,
+     2px  0px 0px #000,
+     2px  1px 0px #000,
+     2px  2px 0px #000,
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 0px #000,
+    -2px  2px 0px #000,
+    -2px  1px 0px #000,
+    -2px  0px 0px #000,
+    -2px -1px 0px #000;
+
+}
+
+.maincontent {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.peachpic {
+    margin-left: 25px;
+    width: 410px;
+    height: 440px;
+
+}
+
+.restofnames {
+    margin-top: 20px;
+    padding-top: 10px;
+    margin-left: 55px;
+    text-align: center;
+    left: 60px;
+    margin-bottom: -20px;
+}
+
+.dkpic {
+    width: 340px;
+}
+
+.dkpic:hover {
+  filter:sepia(60%);
+}
+
+.jokerpic {
+    width: 400px;
+    margin-top: 15px;
+}
+
+.jokerp {
+    text-shadow: /* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  0px 0px #000,
+     1px  0px 0px #000,
+    -1px  1px 0px #000,
+     0px  1px 0px #000,
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px #000,
+     0px -2px 0px #000,
+     1px -2px 0px #000,
+     2px -2px 0px #000,
+     2px -1px 0px #000,
+     2px  0px 0px #000,
+     2px  1px 0px rgb(75, 49, 49),
+     2px  2px 0px #000,
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 0px #000,
+    -2px  2px 0px rgb(105, 105, 105),
+    -2px  1px 0px #000,
+    -2px  0px 0px #000,
+    -2px -1px 0px #000;
+    margin-bottom: 30px;
+}
+
+.wiifitbox {
+    margin: 20px;
+    padding: 20px;
+}
+
+.wiifitpic {
+    padding-top: 30px;
+    display: inline-block;
+}
+
+.wiifitpic:hover {
+  filter:drop-shadow(5, 5, 5, red);
+}
+}
+
+.kazooiehover:hover {
+    filter: saturate(8);
+
+}
+
+
+.thumbnail2 img:hover {
+    filter: saturate(10);
+    color: green;
+    filter: drop-shadow(4px 4px 25px rgb(241, 11, 11));
+}
+
+.kazooiehover:hover {
+    transform: scaleX(-1);
+}
+
+.linkbutton2 {
+  font-size: 20px;
+  border: 1px solid rgb(92, 92, 92);
+  padding: 5px 10px;
+
+}

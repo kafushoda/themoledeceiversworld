@@ -110,157 +110,81 @@ select {
 
 /* The Fancy Heading Code */
 
-.container {
-    position: absolute;
-    transform: translate(-50%, -130%);
-    top: 40%;
-    left: 50%;
-  }
+.center-screen {
+  margin: 0 auto;
+  back
   
-  .glitch {
-    color: rgb(58, 197, 81);
-    position: relative;
-    font-size: 53px;
-    // margin: 70px 200px;
-    animation: glitch 5s 5s infinite;
-  }
-  
-  .glitch::before {
-    content: attr(data-text);
-    position: absolute;
-    left: -2px;
-    text-shadow: -5px 0 rgb(24, 63, 168);
-    background: rgb(23, 58, 0);
-    overflow: hidden;
-    top: 0;
-    animation: noise-1 4s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
-  }
-  
-  .glitch::after {
-    content: attr(data-text);
-    position: absolute;
-    left: 2px;
-    text-shadow: -5px 0 rgb(70, 18, 16);
-    background: linear-gradient(to right top, rgb(0, 58, 8), grey);
-    overflow: hidden;
-    top: 0;
-    animation: noise-2 2s linear infinite alternate-reverse, glitch 5s 3s infinite;
-  }
-  
-  @keyframes glitch {
-    1%{
-      transform: rotateX(10deg) skewX(90deg);
-    }
-    2%{
-      transform: rotateX(0deg) skewX(0deg);
-    }
-  }
-  
-  @keyframes noise-1 {
-    $steps: 30;
-    @for $i from 1 through $steps {
-      #{percentage($i*(1/$steps))} {
-        $top: random(100);
-        $bottom: random(101 - $top);
-        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
-      }
-    }
-  }
-  
-  @keyframes noise-2 {
-    $steps: 30;
-    @for $i from 0 through $steps {
-      #{percentage($i*(1/$steps))} {
-        $top: random(100);
-        $bottom: random(101 - $top);
-        clip-path: inset(#{$top}px 0 #{$bottom}px 0);
-      }
-    }
-  }
-  
-  .scanlines {
-    overflow: hidden;
-    mix-blend-mode: difference;
-  }
-  
-  .scanlines::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-  
-    background: repeating-linear-gradient(
-      to bottom,
-      transparent 0%,
-      rgba(255, 255, 255, 0.05) .5%,
-      transparent 1%
-    );
-  
-    animation: fudge 5s ease-in-out alternate infinite;
-  }
-  
-  
-  @keyframes fudge {
-    from {
-      transform: translate(0px, 0px);
-    }
-    to {
-      transform: translate(0px, 2%);
-    }
-  }
-  
-  .glow {
-    @extend .glitch;
-    text-shadow: 0 0 1000px rgb(94, 9, 9);
-    color: transparent;
-    position: absolute;
-    top: 0;
-  }
-  
-  .subtitle {
-    font-family:'Aldrich', sans-serif, 'Bungee', cursive;
-    font-weight: 100;
-    font-size: 30px;
-    color: rgba(31, 15, 25, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 20px;
-    text-align: center;
-    position: absolute;
-    left: 17%;
-    animation: glitch-2 3s 5.02s infinite;
-  }
-  
-  @keyframes glitch-2 {
-    1%{
-      transform: rotateX(10deg) skewX(70deg);
-    }
-    2%{
-      transform: rotateX(0deg) skewX(0deg);
-    }
-  }
+  width: 50%;
+  height: 80px;
+  text-align: center;
+  font-family: 'Cutive Mono', monospace;
+  border: 3px double rgba(0, 0, 0, 0.507);
+  letter-spacing: 5px;
+  font-weight: 900;
+  text-shadow: 2px 2px 2px rgb(110, 110, 110);
+animation: rainanime3 .5s infinite;
+
+background: linear-gradient(green, grey);
+}
+
+
+.headingtry {
+  font-family:'Aldrich', sans-serif, 'Bungee', cursive;
+  font-weight: 100;
+  font-size: 30px;
+  color: rgb(252, 252, 252);
+  text-transform: uppercase;
+  letter-spacing: 20px;
+  text-align: center;
+  padding-left: 26px;
+  padding-top: 12px;
+}
+
+.smallerheadingbox p {
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-family: 'Aldrich', sans-serif, 'Bungee', cursive;
+  letter-spacing: 5px;
+}
+
+.smallerheadingbox {
+  background: linear-gradient( rgb(9, 255, 0), rgb(18, 255, 156));
+  width: 50%;
+  margin: 0 auto;
+}
+
+.center-screen p {
+  margin-bottom: -30px;
+}
+
+.musicbox {
+  width: 50px;
+  height: 50px;
+  margin
+  padding: 10px 10px 0 0;
+  float: right;
+  overflow: hidden;
+}
+
+.musicbox p {
+  color: white;
+  text-indent: 0px;
+  font-size: 18px;
+  font-style: italic;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  padding-bottom: 5px;
+  text-shadow: 2px 2px 2px black;
+  width: 200px;
+
+}
 
   /* Heading Ends Here */
 
   body {
-      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat -20px 270px, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 875px 768px no-repeat, url('../deceiverspics/dkback-removebg-preview.png') -20px 1120px no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 860px 1560px no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') -20px 1950px no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
+      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat 2% 7%, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 114% 19.5% no-repeat, url('../deceiverspics/dkback-removebg-preview.png') 2% 30% no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 131% 41.7% no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') 5% 53% no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
   }
   
-  .center-screen {
-    margin: 0 auto;
-    background: linear-gradient(to right bottom,rgb(250, 3, 3), rgb(190, 149, 134));
-    width: 50%;
-    height: 190px;
-    text-align: center;
-    padding-top: 150px;
-    font-family: 'Cutive Mono', monospace;
-    border: 3px solid rgba(11, 48, 11, 0.507);
-    letter-spacing: 5px;
-    font-weight: 900;
-    text-shadow: 2px 2px 2px rgb(110, 110, 110);
-    color: rgb(177, 177, 177);
-}
+ 
 
 .musicbox {
     width: 50px;
@@ -551,14 +475,14 @@ footer p:first-child {
 /* New Content Below */
 
 .headingnew {
-    padding: 15px;
+   
 }
 
 .headingbox h1 {
         text-align: center;
         font-family: 'Overpass Mono', monospace;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 50px;
+        padding-bottom: 50px;
         margin-top: 10px;
         font-size: 34px;
         text-indent: 10px;
@@ -766,7 +690,87 @@ footer p:first-child {
 
 .linkbutton2 {
   font-size: 20px;
-  border: 1px solid rgb(92, 92, 92);
-  padding: 5px 10px;
+  border: 1px solid rgb(8, 0, 0);
+  padding: 10px;
 
+}
+
+.columnnn {
+  float: left;
+  width: 50%;
+}
+
+.columnnn img {
+  margin: 0 auto;
+  display: block;
+  width: 370px;
+  height: 370px;
+  margin-bottom: 65px;
+}
+
+.columnnn img:first-child {
+  margin-bottom: 27px;
+}
+
+.secondbigbox {
+  width: 90%;
+    background: linear-gradient(to right bottom, grey, rgb(66, 66, 66)));
+    border: grey;
+    box-shadow: 0 4px 8px 0 rgb(4, 156, 42), 0 6px 20px 0 rgb(156, 156, 156);
+    height: 3000px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-right: 50px;
+}
+
+
+
+.secondbigbox::after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+
+.columnnn h2 {
+  font-family: 'Lalezar', cursive;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: 800;
+    font-size: 40px;
+}
+
+.newchartext p {
+  text-align: center;
+  font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-indent: 10px;
+    color: white;
+    margin-bottom: 120px;
+    text-shadow: /* first layer at 1px */
+    -1px -1px 0px #000,
+     0px -1px 0px #000,
+     1px -1px 0px #000,
+    -1px  0px 0px #000,
+     1px  0px 0px #000,
+    -1px  1px 0px #000,
+     0px  1px 0px #000,
+     1px  1px 0px #000,
+    /* second layer at 2px */
+    -2px -2px 0px #000,
+    -1px -2px 0px #000,
+     0px -2px 0px #000,
+     1px -2px 0px #000,
+     2px -2px 0px #000,
+     2px -1px 0px #000,
+     2px  0px 0px #000,
+     2px  1px 0px #000,
+     2px  2px 0px #000,
+     1px  2px 0px #000,
+     0px  2px 0px #000,
+    -1px  2px 0px #000,
+    -2px  2px 0px #000,
+    -2px  1px 0px #000,
+    -2px  0px 0px #000,
+    -2px -1px 0px #000;
 }

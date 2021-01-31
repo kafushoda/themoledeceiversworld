@@ -181,7 +181,7 @@ background: linear-gradient(green, grey);
   /* Heading Ends Here */
 
   body {
-      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat 2% 7%, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 109% 18% no-repeat, url('../deceiverspics/dkback-removebg-preview.png') 2% 30% no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 124% 40.2% no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') 5% 53% no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
+      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat 2% 7%, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 109% 18% no-repeat, url('../deceiverspics/dkback-removebg-preview.png') 2% 30% no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 124% 40.2% no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') 5% 52.5% no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
   }
   
  
@@ -704,8 +704,8 @@ footer p:first-child {
   margin: 0 auto;
   display: block;
   width: 370px;
-  height: 20%;
-  margin-bottom: 65px;
+  height: 370px;
+  margin-bottom: 70px;
 }
 
 .columnnn img:first-child {
@@ -755,7 +755,7 @@ footer p:first-child {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-indent: 10px;
     color: white;
-    margin-bottom: 165px;
+    margin-bottom: 100px;
     text-shadow: /* first layer at 1px */
     -1px -1px 0px #000,
      0px -1px 0px #000,

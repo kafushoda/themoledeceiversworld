@@ -30,12 +30,7 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Set core 
-
-
-
-
-defaults */
+/* Set core body defaults */
 body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
@@ -185,8 +180,8 @@ background: linear-gradient(green, grey);
 
   /* Heading Ends Here */
 
-   body {
-      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat 2% 7%, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 114% 18% no-repeat, url('../deceiverspics/dkback-removebg-preview.png') 2% 30% no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 131% 40.2% no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') 5% 53% no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
+  body {
+      background: url('../deceiverspics/foxlogo-removebg-preview.png') no-repeat 2% 7%, url('../deceiverspics/mushroomlogo-removebg-preview\ \(1\).png') 109% 18% no-repeat, url('../deceiverspics/dkback-removebg-preview.png') 2% 30% no-repeat, url('../deceiverspics/mask222-removebg-preview.png') 124% 40.2% no-repeat, url('../deceiverspics/wiifitback-removebg-preview\ \(1\).png') 5% 53% no-repeat, linear-gradient(to right, black 50%, rgb(154, 255, 176)); 
   }
   
  
@@ -709,8 +704,9 @@ footer p:first-child {
   margin: 0 auto;
   display: block;
   width: 370px;
-  height: 370px;
+  height: 20%;
   margin-bottom: 65px;
+  border: 1px solid rgb(245, 245, 245);
 }
 
 .columnnn img:first-child {
@@ -726,6 +722,15 @@ footer p:first-child {
     margin: 0 auto;
     padding-top: 50px;
     padding-right: 50px;
+}
+
+.bigequalizer {
+  display: table;
+}
+
+.smallequalizer {
+  display: table-cell;
+  padding: 5px;
 }
 
 
@@ -751,7 +756,7 @@ footer p:first-child {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-indent: 10px;
     color: white;
-    margin-bottom: 180px;
+    margin-bottom: 165px;
     text-shadow: /* first layer at 1px */
     -1px -1px 0px #000,
      0px -1px 0px #000,
@@ -778,4 +783,13 @@ footer p:first-child {
     -2px  1px 0px #000,
     -2px  0px 0px #000,
     -2px -1px 0px #000;
+}
+
+
+}
+
+.heightofp {
+  height: 340px;
+  border: 2px solid red;
+  background-color: green;
 }

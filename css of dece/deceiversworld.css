@@ -134,6 +134,37 @@ select {
     padding-top: 12px;
   }
 
+.menu {
+  position: absolute;
+  margin-left: 5px;
+}
+
+ul {
+  padding: 10px;
+  background-color: rgb(92, 151, 92);
+  border: 2px solid black;
+  text-align: center;
+  box-shadow: 2px 2px 5px black;
+  transition: all 1s;
+}
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: rgb(243, 243, 243);
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  }
+
+ul:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 7px black;
+  
+}
+
+
+
  .smallerheadingbox p {
     color: rgb(0, 0, 0);
     text-align: center;

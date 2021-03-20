@@ -80,6 +80,23 @@ select {
       background: url('../deceiverspics/molethumb.jpg') no-repeat -30px -60px, url('../deceiverspics/molethumb.jpg') right 1700px no-repeat, linear-gradient(to right bottom, black 50%, rgb(154, 255, 176));
   }
 
+  .demo-wrap {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .demo-bg {
+    opacity: 0.6;
+    position: absolute;
+    left: -40px;
+    top: -30px;
+    width: 50%;
+    height: 500px;
+  }
+  
+  .demo-content {
+    position: relative;
+  }  
 
 .center-screen {
     margin: 0 auto;
@@ -406,5 +423,10 @@ footer p:first-child {
   border: 2px double green;
   padding: 4px;
   margin-top: -10px;
+
+}
+
+.pinkpeach {
+  color: rgb(255, 35, 189);
 
 }
